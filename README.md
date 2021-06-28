@@ -26,3 +26,4 @@ and users' registration codes.
 * Dockerize app
 * Fix profile tab (it doesnt show events dates and pictures)
 * Hide MongoDB username and password in .env file
+* Add feature not allowing user to register for event with given circumstances (compare event's date with today's date)
