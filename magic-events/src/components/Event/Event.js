@@ -13,7 +13,14 @@ function Event(props) {
                     <br />
                     End date:{props.end_date}
                 </Card.Text>
-                <Button variant="primary">Register</Button>
+                <Button
+                    variant="primary"
+                    onClick={() => {
+                        props.register(props.title);
+                    }}
+                >
+                    Register
+                </Button>
             </Card.Body>
         </Card>
     );

@@ -36,6 +36,7 @@ function EventHolder() {
                             start_date={event.start_date}
                             end_date={event.end_date}
                             thumbnail={event.thumbnail}
+                            register={register_event}
                         />
                     );
                 })}
