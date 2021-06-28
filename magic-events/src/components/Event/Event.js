@@ -1,16 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-function Event() {
+function Event(props) {
     return (
-        <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+        <Card className="m-5 w-75">
+            <Card.Img variant="top" src={props.thumbnail} />
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>{props.title}</Card.Title>
                 <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Start date:{props.start_date}
+                    <br />
+                    End date:{props.end_date}
                 </Card.Text>
                 <Button variant="primary">Register</Button>
             </Card.Body>

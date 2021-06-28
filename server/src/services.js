@@ -29,7 +29,7 @@ module.exports.make_reservation = async (code, event_title) => {
                 //generates random 10-letter code
                 let result = "";
                 const avaible_chars =
-                    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+                    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
                 for (var i = 0; i < 10; i++) {
                     result += avaible_chars.charAt(
                         Math.floor(Math.random() * avaible_chars.length)

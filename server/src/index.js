@@ -10,8 +10,8 @@ app.get("/api/events", async (req, res) => {
     });
 });
 app.get("/api/tickets", async (req, res) => {
-    if (req.body.code) {
-        services.get_user_events(req.body.code).then((result) => {
+    if (req.query.code) {
+        services.get_user_events(req.query.code).then((result) => {
             res.send(result);
         });
     } else res.send("No reservation code provided");
