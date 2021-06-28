@@ -24,7 +24,7 @@ function Profile(props) {
                 {tickets.map((ticket) => {
                     return (
                         <Event
-                            key={ticket.name}
+                            key={ticket.title}
                             title={ticket.title}
                             start_date={ticket.start_date}
                             end_date={ticket.end_date}
