@@ -20,7 +20,7 @@ module.exports.make_reservation = async (code, event_title) => {
                     title: event_title,
                 })
                 .then(() => {
-                    resolve(`Successfully registered with code ${code}`);
+                    resolve(code);
                 });
         });
     } else {
@@ -45,7 +45,7 @@ module.exports.make_reservation = async (code, event_title) => {
                         title: event_title,
                     })
                     .then(() => {
-                        resolve(`Successfully registered with code ${result}`);
+                        resolve(result);
                     });
             });
         });

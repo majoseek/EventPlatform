@@ -7,18 +7,32 @@ import CardColumns from "react-bootstrap/CardColumns";
 function EventHolder() {
     const [events, setEvents] = useState([]);
     const register_event = (register_title) => {
-        const input_code = prompt(
-            "Please enter your reservation code",
-            "Leave this field empty if you dont have the code"
-        );
-        axios
-            .post("api/tickets", {
-                title: register_title,
-                code: input_code,
-            })
-            .then(() => {
-                alert(`Your registration code is ${input_code}`);
-            });
+        new Promise((resolve, reject) => {
+            const input_code = prompt(
+                "Please enter your reservation code",
+                "Leave this field empty if you dont have the code"
+            );
+            resolve(input_code);
+        }).then((result) => {
+            if (result) {
+                axios
+                    .post("api/tickets", {
+                        title: register_title,
+                        code: result,
+                    })
+                    .then((response) => {
+                        alert(`Your registration code is ${response.data}`);
+                    });
+            } else {
+                axios
+                    .post("api/tickets", {
+                        title: register_title,
+                    })
+                    .then((response) => {
+                        alert(`Your registration code is ${response.data}`);
+                    });
+            }
+        });
     };
     useEffect(() => {
         axios.get("/api/events").then((result) => {
