@@ -10,6 +10,10 @@ To run project frontend go to `magic-events` folder and type
 ```
 npm start
 ```
+Client runs on port 3000, server runs on port 3001.\
+I've created two collections using MongoDB.\
+They include events, for which users can register\
+and users' registration codes.
 ## Tech stack
 #### Backend
 * Node js
